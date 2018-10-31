@@ -31,9 +31,9 @@ async function upsertTransactions (request, response) {
     var objArr = [];
     var objArrLength = objArr.length;
     let transArr = request.body;
-    setTimeout(function (response) {
+    setTimeout(function () {
         if(!value) {
-            response.json("Server Timeout 10S")
+            response.json("Server Timeout 10S");
         }
     },10000);
     if (!transArr || transArr.length === 0) {
@@ -102,9 +102,9 @@ var getRecurringTransactions = (request, response)=>{
     var nameSet = new Set();
     var value = false;
 
-    setTimeout(function (response) {
+    setTimeout(function () {
         if(!value) {
-            response.json("Server Timeout 10S")
+            response.json("Server Timeout 10S");
         }
     },10000);
 
