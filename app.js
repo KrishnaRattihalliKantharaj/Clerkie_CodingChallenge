@@ -186,12 +186,9 @@ async function isPresent(trans){
     let is_present;
     var daysError = 345600000;// 4 days of error margin
     await Model.find({name: new RegExp('^'+cmpName)},(err,res)=>{
-        console.log("ReachedHere1");
         if(res.length===0){
-            console.log("ReachedHere4");
             is_present=true;
         }else{
-            console.log("ReachedHere2");
             Model.find({name: new RegExp('^'+cmpName)},(err, res)=>{
                 let nextTransaction = findNext(res);
                 var amtError1 = nextTransaction.next_amt * 0.8;//amout error margin of 20% less than the current amount
@@ -200,7 +197,6 @@ async function isPresent(trans){
                 let calculatedAmout = trans.amount > amtError1 && trans.amount < amtError2; // Difference must be of error margin 20% above or below
                 trans.is_recurring=true;
                 if(calculatedDate && calculatedAmout){
-                    console.log("ReachedHere3");
                     is_present = true;
                 }else{
                     is_present = true;
