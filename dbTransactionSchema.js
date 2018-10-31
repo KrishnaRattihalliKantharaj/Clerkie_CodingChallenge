@@ -7,8 +7,8 @@ const transactionSchema = mongoose.Schema({
     name: String,
     date: Date,
     amount: Number,
-    trans_id: Number,
-    user_id: Number,
+    trans_id: String,
+    user_id: String,
     is_recurring: Boolean
 });
 

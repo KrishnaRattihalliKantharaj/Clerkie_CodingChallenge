@@ -50,8 +50,8 @@ async function upsertTransactions (request, response) {
                 name: transArr[i].name,
                 date: new Date(transArr[i].date),
                 amount: parseFloat(transArr[i].amount),
-                trans_id: parseInt(transArr[i].trans_id),
-                user_id: parseInt(transArr[i].user_id),
+                trans_id: transArr[i].trans_id,
+                user_id: transArr[i].user_id,
                 is_recurring: true
             };
             return obj;
